@@ -23,6 +23,7 @@ public class CategoriaController : ControllerBase
     }
 
     [HttpPut]
+    [Route("{id}")]
     public IActionResult Put(Guid id, [FromBody]Categoria categoria)
     {
         this.categoriaService.Update(id, categoria);
@@ -30,6 +31,7 @@ public class CategoriaController : ControllerBase
     }
 
     [HttpDelete]
+    [Route("{id}")]
     public IActionResult Delete(Guid id)
     {
         this.categoriaService.Delete(id);
